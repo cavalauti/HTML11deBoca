@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>11 Titular — Boca Juniors · Mayo 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --azul: #003087;
+      --oro: #F5C518;
+      --blanco: #FAFAFA;
+      --gris-campo: #2d7a2d;
+      --gris-claro: #1a1a2e;
+      --sombra: rgba(0,0,0,0.5);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0a0a14;
+      color: var(--blanco);
+      font-family: 'Barlow', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, var(--azul) 0%, #001a5e 60%, #000a30 100%);
+      padding: 2rem 1.5rem 1.5rem;
+      text-align: center;
+      border-bottom: 4px solid var(--oro);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 120%, rgba(245,197,24,0.12) 0%, transparent 70%);
+    }
+
+    .escudo {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .escudo svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 4px 16px rgba(245,197,24,0.5));
+    }
+
+    header h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      letter-spacing: 0.05em;
+      color: var(--blanco);
+      line-height: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 span {
+      color: var(--oro);
+    }
+
+    .subtitulo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(245,197,24,0.75);
+      margin-top: 0.4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta-info {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.2rem;
+      position: relative;
+      z-index: 1;
+      flex-wrap: wrap;
+    }
+
+    .meta-badge {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(245,197,24,0.3);
+      border-radius: 6px;
+      padding: 0.35rem 0.9rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .meta-badge strong { color: var(--oro); }
+
+    /* CAMPO */
+    .campo-wrapper {
+      max-width: 680px;
+      margin: 2.5rem auto 0;
+      padding: 0 1rem;
+    }
+
+    .campo {
+      background: linear-gradient(180deg,
+        #1e6b1e 0%,
+        #237223 10%,
+        #1e6b1e 20%,
+        #237223 30%,
+        #1e6b1e 40%,
+        #237223 50%,
+        #1e6b1e 60%,
+        #237223 70%,
+        #1e6b1e 80%,
+        #237223 90%,
+        #1e6b1e 100%
+      );
+      border: 3px solid rgba(255,255,255,0.25);
+      border-radius: 10px;
+      padding: 1.5rem 1rem 2rem;
+      position: relative;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.6), inset 0 0 60px rgba(0,0,0,0.2);
+    }
+
+    /* Líneas del campo */
+    .campo::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      right: 5%;
+      height: 2px;
+      background: rgba(255,255,255,0.25);
+      transform: translateY(-50%);
+    }
+
+    .campo::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 80px;
+      height: 80px;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Área grande arriba */
+    .area-arr {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 55%;
+      height: 80px;
+      border: 2px solid rgba(255,255,255,0.18);
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+    }
+
+    /* Área grande abajo */
+    .area-aba {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 55%;
+      height: 80px;
+      border: 2px solid rgba(255,255,255,0.18);
+      border-bottom: none;
+      border-radius: 8px 8px 0 0;
+    }
+
+    /* FILAS */
+    .fila {
+      display: flex;
+      justify-content: center;
+      gap: clamp(0.4rem, 2vw, 1.2rem);
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .fila:last-child { margin-bottom: 0; }
+
+    /* JUGADOR */
+    .jugador {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: default;
+      transition: transform 0.2s ease;
+      width: clamp(72px, 14vw, 100px);
+    }
+
+    .jugador:hover { transform: translateY(-5px); }
+
+    .jugador-circulo {
+      width: clamp(52px, 10vw, 68px);
+      height: clamp(52px, 10vw, 68px);
+      border-radius: 50%;
+      background: linear-gradient(145deg, var(--azul), #001a5e);
+      border: 3px solid var(--oro);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.5), 0 0 0 2px rgba(245,197,24,0.2);
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .jugador-circulo::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 45%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 100%);
+      border-radius: 50% 50% 0 0;
+    }
+
+    .jugador:hover .jugador-circulo {
+      box-shadow: 0 6px 24px rgba(245,197,24,0.4), 0 0 0 3px var(--oro);
+    }
+
+    .dorsal {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      line-height: 1;
+      color: var(--oro);
+      position: relative;
+      z-index: 1;
+    }
+
+    .icono-pos {
+      font-size: 0.75rem;
+      opacity: 0.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    .jugador-nombre {
+      margin-top: 0.45rem;
+      text-align: center;
+      line-height: 1.15;
+    }
+
+    .jugador-nombre .apellido {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: clamp(0.65rem, 1.6vw, 0.82rem);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #fff;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.8);
+      display: block;
+    }
+
+    .jugador-nombre .pos-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--oro);
+      text-transform: uppercase;
+      background: rgba(0,0,0,0.45);
+      padding: 1px 5px;
+      border-radius: 3px;
+      margin-top: 2px;
+      display: inline-block;
+    }
+
+    /* PORTERO especial */
+    .jugador.portero .jugador-circulo {
+      background: linear-gradient(145deg, #2d1a6e, #1a0d40);
+      border-color: #c0a020;
+    }
+
+    /* PANEL INFO */
+    .panel-info {
+      max-width: 680px;
+      margin: 2rem auto;
+      padding: 0 1rem 3rem;
+    }
+
+    .panel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      .panel-grid { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: linear-gradient(135deg, #0e1332, #060c24);
+      border: 1px solid rgba(245,197,24,0.2);
+      border-radius: 10px;
+      padding: 1.2rem 1.4rem;
+    }
+
+    .card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      color: var(--oro);
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(245,197,24,0.2);
+    }
+
+    .card ul {
+      list-style: none;
+    }
+
+    .card ul li {
+      font-size: 0.82rem;
+      font-family: 'Barlow', sans-serif;
+      color: rgba(255,255,255,0.78);
+      padding: 0.3rem 0;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .card ul li:last-child { border-bottom: none; }
+
+    .card ul li span:first-child { color: rgba(255,255,255,0.5); font-size: 0.78rem; }
+    .card ul li span:last-child { font-weight: 500; color: #fff; }
+
+    .formacion-tag {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      color: var(--oro);
+      letter-spacing: 0.1em;
+      text-align: center;
+      display: block;
+      margin: 0.5rem 0;
+    }
+
+    .card.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .nota {
+      background: rgba(245,197,24,0.08);
+      border-left: 3px solid var(--oro);
+      border-radius: 0 6px 6px 0;
+      padding: 0.7rem 1rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+      margin-top: 0.8rem;
+      line-height: 1.5;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #06091a;
+      border-top: 2px solid rgba(245,197,24,0.25);
+      text-align: center;
+      padding: 1.2rem;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+      font-family: 'Barlow Condensed', sans-serif;
+      letter-spacing: 0.1em;
+    }
+
+    /* TOOLTIP on hover */
+    .jugador:hover .jugador-nombre .apellido {
+      color: var(--oro);
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="escudo">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <!-- Escudo forma -->
+      <path d="M50 5 L85 20 L85 65 Q85 85 50 97 Q15 85 15 65 L15 20 Z" fill="#003087" stroke="#F5C518" stroke-width="3"/>
+      <!-- Franjas -->
+      <rect x="15" y="40" width="70" height="13" fill="#F5C518"/>
+      <!-- CABJ texto -->
+      <text x="50" y="30" text-anchor="middle" font-family="Arial Black" font-size="11" fill="white" font-weight="900">CABJ</text>
+      <text x="50" y="67" text-anchor="middle" font-family="Arial Black" font-size="9.5" fill="#003087" font-weight="900">XENEIZE</text>
+      <text x="50" y="85" text-anchor="middle" font-family="Arial" font-size="7.5" fill="#F5C518">1905</text>
+    </svg>
+  </div>
+  <h1>BOCA <span>JUNIORS</span></h1>
+  <p class="subtitulo">11 Titular · Temporada 2026</p>
+  <div class="meta-info">
+    <span class="meta-badge">DT: <strong>Claudio Úbeda</strong></span>
+    <span class="meta-badge">Esquema: <strong>4-3-1-2</strong></span>
+    <span class="meta-badge">Actualizado: <strong>13 Mayo 2026</strong></span>
+  </div>
+</header>
+
+<!-- CAMPO DE JUEGO -->
+<div class="campo-wrapper">
+  <div class="campo">
+    <div class="area-arr"></div>
+    <div class="area-aba"></div>
+
+    <!-- DELANTEROS -->
+    <div class="fila">
+      <div class="jugador">
+        <div class="jugador-circulo">
+          <span class="dorsal">28</span>
+          <span class="icono-pos">⚽</span>
+        </div>
+        <div class="jugador-nombre">
+          <span class="apellido">Bareiro</span>
+          <span class="pos-tag">DEL</span>
+        </div>
+      </div>
+      <div class="jugador">
+        <div class="jugador-circulo">
+          <span class="dorsal">16</span>
+          <span class="icono-pos">⚽</span>
+        </div>
+        <div class="jugador-nombre">
+          <span class="apellido">Merentiel</span>
+          <span class="pos-tag">DEL</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENGANCHE -->
+    <div class="fila">
+      <div class="jugador">
+        <div class="jugador-circulo">
+          <span class="dorsal">36</span>
+          <span class="icono-pos">🎯</span>
+        </div>
+        <div class="jugador-nombre">
+          <span class="apellido">Aranda</span>
+          <span class="pos-tag">ENG</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEDIOCAMPO -->
+    <div class="fila">
+      <div class="jugador">
+        <div class="jugador-circulo">
+          <span class="dorsal">25</span>
+          <span class="icono-pos">⚙️</span>
+        </div>
+        <div class="jugador-nombre">
+          <span class="apellido">Ascacíbar</span>
+          <span class="pos-tag">MED</span>
+        </div>
+      </div>
+      <div class="jugador">
+        <div class="jugador-circulo">
+          <span class="dorsal">5</span>
+          <span class="icono-pos">⚙️</span>
+        </div>
+        <div class="jugador-nombre">
+          <span class="apellido">Paredes</span>
+          <span class="pos-tag">MED CAP</span>
+        </div>
+      </div>
+      <div class="jugador">
+        <div class="jugador-circulo">
+          <span class="dorsal">18</span>
+          <span class="icono-pos">⚙️</span>
+        </div>
+        <div class="jugador-nombre">
+          <span class="apellido">Delgado</span>
+          <span class="pos-tag">MED</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEFENSA -->
+    <div class="fila">
+      <div class="jugador">
+        <div class="jugador-circulo">
+          <span class="dorsal">23</span>
+          <span class="icono-pos">🛡️</span>
+        </div>
+        <div class="jugador-nombre">
+          <span class="apellido">Weigandt</span>
+          <span class="pos-tag">LAT DER</span>
+        </div>
+      </div>
+      <div class="jugador">
+        <div class="jugador-circulo">
+          <span class="dorsal">2</span>
+          <span class="icono-pos">🛡️</span>
+        </div>
+        <div class="jugador-nombre">
+          <span class="apellido">Di Lollo</span>
+          <span class="pos-tag">CTR</span>
+        </div>
+      </div>
+      <div class="jugador">
+        <div class="jugador-circulo">
+          <span class="dorsal">32</span>
+          <span class="icono-pos">🛡️</span>
+        </div>
+        <div class="jugador-nombre">
+          <span class="apellido">Costa</span>
+          <span class="pos-tag">CTR</span>
+        </div>
+      </div>
+      <div class="jugador">
+        <div class="jugador-circulo">
+          <span class="dorsal">3</span>
+          <span class="icono-pos">🛡️</span>
+        </div>
+        <div class="jugador-nombre">
+          <span class="apellido">Blanco</span>
+          <span class="pos-tag">LAT IZQ</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARQUERO -->
+    <div class="fila">
+      <div class="jugador portero">
+        <div class="jugador-circulo">
+          <span class="dorsal">1</span>
+          <span class="icono-pos">🧤</span>
+        </div>
+        <div class="jugador-nombre">
+          <span class="apellido">Marchesín</span>
+          <span class="pos-tag">ARQ</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /campo -->
+</div><!-- /campo-wrapper -->
+
+<!-- PANEL DE INFO -->
+<div class="panel-info">
+  <div class="panel-grid">
+
+    <div class="card">
+      <h3>📋 Cuerpo Técnico</h3>
+      <ul>
+        <li><span>DT</span><span>Claudio Úbeda</span></li>
+        <li><span>Presidente</span><span>Juan R. Riquelme</span></li>
+        <li><span>Estadio</span><span>La Bombonera</span></li>
+        <li><span>Capacidad</span><span>57.200</span></li>
+        <li><span>Capitán</span><span>Leandro Paredes</span></li>
+      </ul>
+    </div>
+
+    <div class="card" style="text-align:center;">
+      <h3>🗂️ Sistema de Juego</h3>
+      <span class="formacion-tag">4 · 3 · 1 · 2</span>
+      <ul style="text-align:left;">
+        <li><span>Arco</span><span>1</span></li>
+        <li><span>Defensa</span><span>4 (2 CTR + 2 LAT)</span></li>
+        <li><span>Mediocampo</span><span>3</span></li>
+        <li><span>Enganche</span><span>1</span></li>
+        <li><span>Delantera</span><span>2</span></li>
+      </ul>
+    </div>
+
+    <div class="card full-width">
+      <h3>👥 Los 11 Titulares</h3>
+      <ul>
+        <li><span>#1 · Agustín Marchesín</span><span>Arquero</span></li>
+        <li><span>#23 · Marcelo Weigandt</span><span>Lat. Derecho</span></li>
+        <li><span>#2 · Lautaro Di Lollo</span><span>Central</span></li>
+        <li><span>#32 · Ayrton Costa</span><span>Central</span></li>
+        <li><span>#3 · Lautaro Blanco</span><span>Lat. Izquierdo</span></li>
+        <li><span>#25 · Santiago Ascacíbar</span><span>Mediocampista</span></li>
+        <li><span>#5 · Leandro Paredes ©</span><span>Mediocampista</span></li>
+        <li><span>#18 · Milton Delgado</span><span>Mediocampista</span></li>
+        <li><span>#36 · Tomás Aranda</span><span>Enganche</span></li>
+        <li><span>#28 · Adam Bareiro</span><span>Delantero</span></li>
+        <li><span>#16 · Miguel Merentiel</span><span>Delantero</span></li>
+      </ul>
+      <div class="nota">
+        ⚠️ <strong>Nota (13 mayo 2026):</strong> Tras la eliminación ante Huracán en octavos del Apertura, Úbeda analiza cambios: Figal por Di Lollo, Ander Herrera por Delgado. Adam Bareiro se desgarró y es duda. Se viene la Copa Libertadores.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🏆 Competencias 2026</h3>
+      <ul>
+        <li><span>Apertura</span><span>Eliminado (Octavos)</span></li>
+        <li><span>Clausura</span><span>Fase de grupos</span></li>
+        <li><span>Copa Argentina</span><span>Ronda 64</span></li>
+        <li><span>Libertadores</span><span>Fase de grupos</span></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>⭐ Datos Temporada</h3>
+      <ul>
+        <li><span>Goleador</span><span>Miguel Merentiel</span></li>
+        <li><span>Proveedor</span><span>Adidas</span></li>
+        <li><span>Liga</span><span>AFA – 1ª División</span></li>
+        <li><span>Mayor victoria</span><span>D. y Justicia 0–4</span></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  CLUB ATLÉTICO BOCA JUNIORS &nbsp;·&nbsp; TEMPORADA 2026 &nbsp;·&nbsp; ACTUALIZADO AL 13 DE MAYO DE 2026
+  <br>Datos basados en información pública disponible al día de la fecha.
+</footer>
+
+</body>
+</html>
